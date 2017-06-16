@@ -14,6 +14,7 @@
 		048F47E01EF25DAD00C2537B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 048F47DE1EF25DAD00C2537B /* LaunchScreen.storyboard */; };
 		048F47EB1EF25DAD00C2537B /* CoreMLDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048F47EA1EF25DAD00C2537B /* CoreMLDemoTests.swift */; };
 		048F47F61EF25DAD00C2537B /* CoreMLDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048F47F51EF25DAD00C2537B /* CoreMLDemoUITests.swift */; };
+		04D84C7B1EF36AFA000BBB1E /* Resnet50.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 04D84C7A1EF36AFA000BBB1E /* Resnet50.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		048F47F11EF25DAD00C2537B /* CoreMLDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoreMLDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		048F47F51EF25DAD00C2537B /* CoreMLDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreMLDemoUITests.swift; sourceTree = "<group>"; };
 		048F47F71EF25DAD00C2537B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04D84C7A1EF36AFA000BBB1E /* Resnet50.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = Resnet50.mlmodel; path = "../../../TestCoreML-master/TestCoreML/Resources/Resnet50.mlmodel"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 		048F47D41EF25DAD00C2537B /* CoreMLDemo */ = {
 			isa = PBXGroup;
 			children = (
+				04D84C7A1EF36AFA000BBB1E /* Resnet50.mlmodel */,
 				048F47D51EF25DAD00C2537B /* AppDelegate.swift */,
 				048F47D71EF25DAD00C2537B /* ViewController.swift */,
 				048F47D91EF25DAD00C2537B /* Main.storyboard */,
@@ -257,6 +260,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				048F47D81EF25DAD00C2537B /* ViewController.swift in Sources */,
+				04D84C7B1EF36AFA000BBB1E /* Resnet50.mlmodel in Sources */,
 				048F47D61EF25DAD00C2537B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -518,6 +522,7 @@
 				048F47FC1EF25DAD00C2537B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		048F47FD1EF25DAD00C2537B /* Build configuration list for PBXNativeTarget "CoreMLDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -526,6 +531,7 @@
 				048F47FF1EF25DAD00C2537B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		048F48001EF25DAD00C2537B /* Build configuration list for PBXNativeTarget "CoreMLDemoUITests" */ = {
 			isa = XCConfigurationList;
@@ -534,6 +540,7 @@
 				048F48021EF25DAD00C2537B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

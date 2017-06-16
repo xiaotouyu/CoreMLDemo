@@ -1,14 +1,18 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.17" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.14"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CoreMLDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +20,74 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Udr-il-sXA">
+                                <rect key="frame" x="16" y="20" width="343" height="165"/>
+                                <color key="backgroundColor" red="0.50134487670000005" green="1" blue="0.29941260289999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="识别结果:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W9r-AP-ohf">
+                                <rect key="frame" x="16" y="353" width="343" height="21"/>
+                                <color key="backgroundColor" red="0.50134487670000005" green="1" blue="0.29941260289999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="匹配率:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aUP-1h-Gub">
+                                <rect key="frame" x="16" y="398" width="343" height="32"/>
+                                <color key="backgroundColor" red="0.50134487670000005" green="1" blue="0.29941260289999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="u65-HD-XX5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zIa-if-ALS">
+                                <rect key="frame" x="16" y="257" width="343" height="30"/>
+                                <color key="backgroundColor" red="0.50134487670000005" green="1" blue="0.29941260289999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="选择图片"/>
+                                <connections>
+                                    <action selector="click:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Pne-1K-4oh"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ehs-B1-UAH">
+                                <rect key="frame" x="16" y="305" width="343" height="30"/>
+                                <color key="backgroundColor" red="0.50134487670000005" green="1" blue="0.29941260289999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="识别图片"/>
+                                <connections>
+                                    <action selector="identifyImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CZd-kz-zij"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Udr-il-sXA" firstAttribute="trailing" secondItem="zIa-if-ALS" secondAttribute="trailing" id="4aA-xT-cVr"/>
+                            <constraint firstItem="Udr-il-sXA" firstAttribute="leading" secondItem="zIa-if-ALS" secondAttribute="leading" id="5TO-SM-29U"/>
+                            <constraint firstItem="W9r-AP-ohf" firstAttribute="top" secondItem="ehs-B1-UAH" secondAttribute="bottom" constant="18" id="5kR-r4-giP"/>
+                            <constraint firstItem="ehs-B1-UAH" firstAttribute="leading" secondItem="W9r-AP-ohf" secondAttribute="leading" id="LPq-db-p5L"/>
+                            <constraint firstItem="Udr-il-sXA" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="OAs-4U-6Ob"/>
+                            <constraint firstItem="Udr-il-sXA" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="PVM-8a-rhX"/>
+                            <constraint firstItem="ehs-B1-UAH" firstAttribute="trailing" secondItem="W9r-AP-ohf" secondAttribute="trailing" id="Qv2-GS-Cha"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="aUP-1h-Gub" secondAttribute="bottom" constant="237" id="U4k-u0-tA5"/>
+                            <constraint firstItem="ehs-B1-UAH" firstAttribute="top" secondItem="zIa-if-ALS" secondAttribute="bottom" constant="18" id="baF-vN-hr3"/>
+                            <constraint firstItem="W9r-AP-ohf" firstAttribute="trailing" secondItem="aUP-1h-Gub" secondAttribute="trailing" id="f3T-qd-f28"/>
+                            <constraint firstItem="zIa-if-ALS" firstAttribute="trailing" secondItem="ehs-B1-UAH" secondAttribute="trailing" id="g7h-nA-kgH"/>
+                            <constraint firstItem="zIa-if-ALS" firstAttribute="leading" secondItem="ehs-B1-UAH" secondAttribute="leading" id="hHu-M0-r1E"/>
+                            <constraint firstItem="W9r-AP-ohf" firstAttribute="leading" secondItem="aUP-1h-Gub" secondAttribute="leading" id="q4f-JU-RV4"/>
+                            <constraint firstItem="Udr-il-sXA" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="wnz-NF-w66"/>
+                            <constraint firstItem="zIa-if-ALS" firstAttribute="top" secondItem="Udr-il-sXA" secondAttribute="bottom" constant="72" id="z3s-ZU-FyI"/>
+                            <constraint firstItem="aUP-1h-Gub" firstAttribute="top" secondItem="W9r-AP-ohf" secondAttribute="bottom" constant="24" id="zuX-Ey-ebc"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="iocn_img" destination="Udr-il-sXA" id="yZQ-X2-QX7"/>
+                        <outlet property="matching" destination="aUP-1h-Gub" id="fp7-g6-l17"/>
+                        <outlet property="result" destination="W9r-AP-ohf" id="RZ2-iR-MUo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="77.599999999999994" y="51.724137931034484"/>
         </scene>
     </scenes>
 </document>
